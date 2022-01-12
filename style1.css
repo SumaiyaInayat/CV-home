@@ -5,27 +5,30 @@
 }
 
 body{
+	background-image: url("bg.jpg") ;
+	background-repeat: no-repeat;
+	background-size: cover;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
-}
-
-
-.container{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
+	height: auto;
 }
 
 
 .login-content{
 	display: flex;
-	justify-content: flex-start;
+	box-shadow: white;
+	justify-content: center;
 	align-items: center;
 	text-align: center;
-    margin: 100px;
+	margin-top:5%;
+    margin-left: 34%;
+	height :auto;
+	max-width:500px;
+}
+
+.form-container {
+	max-width: 300px;
+	padding: 10px;
 }
 
 .img img{
@@ -45,6 +48,7 @@ form{
 	margin: 15px 0;
 	color: #387997;
 	text-transform: uppercase;
+	text-shadow: rgb(13, 30, 56);
 	font-size: 2.9rem;
 }
 
@@ -60,7 +64,7 @@ form{
     grid-template-columns: 7% 93%;
     margin: 25px 0;
     padding: 5px 0;
-    border-bottom: 2px solid #d9d9d9;
+    border-bottom: 2px solid #141414;
 }
 
 .login-content .input-div.one{
@@ -68,7 +72,7 @@ form{
 }
 
 .i{
-	color: #d9d9d9;
+	color: #111010;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -88,7 +92,7 @@ form{
 	left: 10px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #999;
+	color: rgb(10, 10, 10);
 	font-size: 18px;
 	transition: .3s;
 }
@@ -135,7 +139,7 @@ form{
 	background: none;
 	padding: 0.5rem 0.7rem;
 	font-size: 1.2rem;
-	color: #555;
+	color: rgb(10, 10, 10);
 	font-family: 'poppins', sans-serif;
 }
 
@@ -146,7 +150,7 @@ form{
 a{
 	text-align: right;
 	text-decoration: none;
-	color: #999;
+	color: rgb(10, 10, 10);
 	font-size: 0.9rem;
 	transition: .3s;
 }
@@ -163,6 +167,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
+	box-shadow: cornsilk;
 	background-image: linear-gradient(to right, #389ac7, #387997, #3983c9);
 	background-size: 200%;
 	font-size: 1.2rem;
@@ -182,11 +187,18 @@ a:hover{
 	.container{
 		grid-gap: 5rem;
 	}
+	.login-content{
+		margin-left: 20%;
+	}
 }
 
 @media screen and (max-width: 1000px){
+	
 	form{
 		width: 290px;
+	}
+	.login-content{
+		margin-left: 20%;
 	}
 
 	.login-content h2{
@@ -203,5 +215,6 @@ a:hover{
 
 	.login-content{
 		justify-content: center;
+		margin-left: 5%;
 	}
 }
