@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password ="";
-    $dbname = "writeitup";
+    $dbname = "database";
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("connection failed:" . $conn->connect_error);
@@ -10,7 +10,7 @@
 if (isset($_POST["signup"])) {
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
     $username = mysqli_real_escape_string($conn, $_POST["uname"]);
-    $pass = mysqli_real_escape_string($conn, md5($_POST["password"]));
+    $pass = mysqli_real_escape_string($conn, $_POST["password"]);
 
     $check_username = mysqli_num_rows(mysqli_query($conn, "SELECT username from users where username='$username'"));
     $check_email = mysqli_num_rows(mysqli_query($conn, "SELECT email from users where email='$email'"));
@@ -44,7 +44,7 @@ if (isset($_POST["signup"])) {
 <body>
 	
 		<div class="login-content">
-			<form action="index.html">
+			<form action="" method="post">
 				<img src="avatar.png">
 				<h2 class="title">Sign Up</h2>
                 <div class="input-div email">
