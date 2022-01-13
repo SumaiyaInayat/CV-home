@@ -2,7 +2,7 @@
 	$servername = "localhost";
     $username = "root";
     $password ="";
-    $dbname = "writeitup";
+    $dbname = "database";
     $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
         die("connection failed:" . $conn->connect_error);
@@ -10,16 +10,16 @@ if ($conn->connect_error) {
 session_start();
 if(isset($_POST["login"])){
     $username=mysqli_real_escape_string($conn,$_POST["uname"]);
-    $password=mysqli_real_escape_string($conn,md5($_POST["password"]));
+    $password=mysqli_real_escape_string($conn,$_POST["password"]);
     $user=mysqli_query($conn,"SELECT username from users where username='$username' AND password='$password'");
     if(mysqli_num_rows($user)>0){
         $row=mysqli_fetch_assoc($user);
         $_SESSION['username']=$row['uname'];
-        echo "<script>window.location.href='../index.php';</script>";
+        echo "<script>window.location.href='index.html';</script>";
     }
     else{
         echo "<script>alert(\"Login details are incorrect. Please try again.\");
-        window.location.href='login.html';
+        window.location.href='login.php';
         </script>";
     }
 }
@@ -36,7 +36,7 @@ if(isset($_POST["login"])){
 <body>
 	
 		<div class="login-content">
-			<form action="index.html" method="post">
+			<form action="" method="post">
 				<img src="avatar.png">
 				<h2 class="title">Log In</h2>
            		<div class="input-div one">
