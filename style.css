@@ -23,30 +23,40 @@ body{
     
     background-color:#75acc5 !important ;
     color: white;
+
 }
 
 .dropdown-item{
     color: rgb(97, 68, 68);
     font-size: 20px;
+    font-weight: bold !important;
 }
 .dropdown-item:hover{
     background: color #285569 !important; 
     font-weight: 400;
     font-size: 18px;
 }
-.heading>h1 {
+.heading>h2,h1 {
+    font-family: 'Mochiy Pop P One', sans-serif;
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
     color:#172f3a ;
     margin-bottom: 50px;
     margin-top: 50px;
 }
 
 .card-title{
+    font-family: 'Mochiy Pop P One', sans-serif;
     font-weight: 700;
     text-align: center;
 }
 
+.abthead{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: #172f3a;
+     font-weight: 400; 
+     font-size: 30px;
+}
 .fa-copyright{
     font-size: 20px !important ;
 }
