@@ -41,36 +41,26 @@
                 </span>
             </div>
         </nav>
-    <div class="gap"></div>
-    <div class="container">
-        <div class="row ">
-            <div class="col-sm-12 col-md-12  col-lg-4">
-                <div class="card"  class="imglink" >
-                    <a href="https://www.google.com/" >
-                        <img src="imgaes/temp.jpg"style="width: 20rem; height: 30rem;"  class="ig" class="card-img-top"  >
-                        
-                    
-                    </a>
-                    <a href="temp.html" class="btn btn-danger  "  class="btn" >Create CV</a>
-                    
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12  col-lg-4">
-                <div class="card" class="imglink"  >
-                    <a href="https://www.google.com/"><img src="imgaes/temp.jpg"style="width: 20rem; height: 30rem;"  class="card-img-top"  ></a>
-                    <a href="temp.html" class="btn btn-danger  "  class="btn" >Create CV</a>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12  col-lg-4">
-                <div class="card"   class="imglink"  >
-                    <a href="https://www.google.com/"><img src="imgaes/temp.jpg"style="width: 20rem; height: 30rem;"  class="card-img-top"  ></a>
-                    <a href="temp.html" class="btn btn-danger  "  class="btn" >Create CV</a>
-                </div>
-            </div>
-            
-            
+       <form action="" method="post">
+           <h2>Select Template</h2>
 
-        </div>
+        <label>
+          <input type="radio" name="template" value="template1" checked>
+          <img src="temp.jpg">
+        </label>
+      
+        <label>
+          <input type="radio" name="template" value="template2">
+          <img src="temp.jpg">
+        </label>
+      
+        <label>
+          <input type="radio" name="template" value="template3">
+          <img src="temp.jpg">
+        </label>
+        <input type="submit" class="btn" value="Done" name="temp">
+        </form>
+
     </div>
     <div class="gap"></div>
     </div>
@@ -88,3 +78,29 @@
     crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+     $servername = "localhost";
+    $username = "root";
+    $password ="";
+    $dbname = "database";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("connection failed:" . $conn->connect_error);
+    }
+if (isset($_POST['temp'])){
+    if (empty($_POST["gender"])){
+        $template = $_POST["template"];
+    }
+    if (isset($template) && $template=="template1") {
+        echo "template1";
+    }
+    if (isset($template) && $template=="template2") {
+        echo "template2";
+    }
+    if (isset($template) && $template=="template3") {
+        echo "template3";
+    }
+    
+
+}
+?>
